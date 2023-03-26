@@ -10,7 +10,7 @@ const useSignup = () => {
     setIsLoading(true);
     setError(false);
 
-    const response = await fetch("/api/user/signup", {
+    const response = await fetch("https://gymflow-api.onrender.com/api/user/signup", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: {

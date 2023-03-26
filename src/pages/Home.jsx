@@ -12,11 +12,14 @@ const Home = () => {
 
   useEffect(() => {
     const getWorkouts = async () => {
-      const response = await fetch("/api/workouts", {
-        headers: {
-          "Authorization": `Bearer ${user.token}`,
-        },
-      });
+      const response = await fetch(
+        "https://gymflow-api.onrender.com/api/workouts",
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
       const json = await response.json();
 
       if (response.ok) {
@@ -24,7 +27,7 @@ const Home = () => {
       }
     };
     getWorkouts();
-  }, []);
+  }, [user.token, dispatch]);
 
   return (
     <div className="home">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import useAuthContext from './useAuthContext'
 
 const useLogin = () => {
@@ -10,13 +10,16 @@ const useLogin = () => {
 
         setIsLoading(true)
         setError(false)
-        const response = await fetch("/api/user/login", {
+        const response = await fetch(
+          "https://gymflow-api.onrender.com/api/user/login",
+          {
             method: "POST",
-            body: JSON.stringify({ email, password}),
+            body: JSON.stringify({ email, password }),
             headers: {
-                'Content-Type': "application/json"
-            }
-        })
+              "Content-Type": "application/json",
+            },
+          }
+        );
         const json = await response.json()
 
         if (!response.ok) {
