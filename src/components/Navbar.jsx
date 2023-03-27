@@ -16,7 +16,7 @@ const Navbar = () => {
         <Link to="/">
           <h1>GymFlow</h1>
         </Link>
-        <nav>
+        <nav className="text-[11px] md:text-[14px]">
           {user && (
             <div>
               {user.email}

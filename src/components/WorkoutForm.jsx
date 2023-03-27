@@ -39,9 +39,9 @@ const WorkoutForm = () => {
   };
 
   return (
-    <div>
+    <div className="mt-5">
       <form onSubmit={handleSubmit}>
-        <h3>Add a new Workout</h3>
+        {/* <h3 className="hidden md:block">Add a new Workout</h3> */}
         <label>Excercise Title: </label>
         <input
           type="text"

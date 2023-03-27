@@ -15,7 +15,7 @@ const Singup = () => {
 
   return (
     <div className="signup">
-      <h3>Sign Up</h3>
+      <h3 className="text-xl mb-5">Sign Up</h3>
       <form onSubmit={handleSubmit}>
         <label>Email:</label>
         <input
