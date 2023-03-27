@@ -28,7 +28,12 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button disabled={isLoading}>Login</button>
+        <button
+          className={isLoading && "bg-slate-500 cursor-not-allowed"}
+          disabled={isLoading}
+        >
+          Login
+        </button>
         {error && <div className="error">{error}</div>}
       </form>
     </div>

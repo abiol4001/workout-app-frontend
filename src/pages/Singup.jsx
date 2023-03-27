@@ -29,7 +29,7 @@ const Singup = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button disabled={isLoading}>Sign up</button>
+        <button className={isLoading && "bg-slate-500 cursor-not-allowed" } disabled={isLoading}>Sign up</button>
         {error && <div className="error">{error}</div>}
       </form>
     </div>

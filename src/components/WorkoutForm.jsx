@@ -14,14 +14,17 @@ const WorkoutForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const workoutPost = { title, load, reps };
-    const response = await fetch("/api/workouts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${user.token}`
-      },
-      body: JSON.stringify(workoutPost),
-    });
+    const response = await fetch(
+      "https://gymflow-api.onrender.com/api/workouts",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+        body: JSON.stringify(workoutPost),
+      }
+    );
     const json = await response.json();
 
     if (!response.ok) {
